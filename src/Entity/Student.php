@@ -2,6 +2,9 @@
 
 namespace Werner\DoctrineORM\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 /**
  * @Entity
  */
@@ -19,12 +22,22 @@ class Student
      */
     private string $name;
 
-    public function getId()
+    /**
+     * @OneToMany(targetEntity="Phone", mappedBy="student")
+     */
+    private Collection $phones;
+
+    public function __construct()
+    {
+        $this->phones = new ArrayCollection();
+    }
+
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -34,5 +47,18 @@ class Student
         $this->name = $name;
 
         return $this;
+    }
+
+    public function addPhone(Phone $phone): self
+    {
+        $this->phones->add($phone);
+        $phone->setStudent($this);
+
+        return $this;
+    }
+
+    public function getPhones(): Collection
+    {
+        return $this->phones;
     }
 }
