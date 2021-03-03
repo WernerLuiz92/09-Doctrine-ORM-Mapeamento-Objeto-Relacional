@@ -10,10 +10,3 @@ $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityNanager();
 
 $studentsRepository = $entityManager->getRepository(Student::class);
-
-$aluno = new Student();
-$aluno->setName($argv[1]);
-
-$entityManager->persist($aluno);
-
-$entityManager->flush();

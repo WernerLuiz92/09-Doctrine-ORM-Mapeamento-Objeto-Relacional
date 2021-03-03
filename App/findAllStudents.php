@@ -11,9 +11,11 @@ $entityManager = $entityManagerFactory->getEntityNanager();
 
 $studentsRepository = $entityManager->getRepository(Student::class);
 
-$aluno = new Student();
-$aluno->setName($argv[1]);
+/** @var Student[] $studentsList */
+$studentsList = $studentsRepository->findAll();
 
-$entityManager->persist($aluno);
-
-$entityManager->flush();
+foreach ($studentsList as $student) {
+    echo "ID: {$student->getId()} <br>";
+    echo "Nome: {$student->getName()} <br>";
+    echo '<br>';
+}
