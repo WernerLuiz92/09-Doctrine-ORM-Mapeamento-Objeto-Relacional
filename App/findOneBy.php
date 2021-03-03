@@ -10,12 +10,18 @@ $entityManager = $entityManagerFactory->getEntityNanager();
 
 $studentsRepository = $entityManager->getRepository(Student::class);
 
-/** @var Student[] $studentsList */
-$studentsList = $studentsRepository->findAll();
+/** @var Student $student */
+$studentsList = $studentsRepository->findBy([
+    $argv[1] => $argv[2],
+]);
+
+if (count($studentsList) === 0) {
+    echo 'Nenhum registro encontrado!'.PHP_EOL;
+    exit();
+}
 
 foreach ($studentsList as $student) {
     echo "ID: {$student->getId()}".PHP_EOL;
     echo "Nome: {$student->getName()}".PHP_EOL;
-    echo PHP_EOL;
     echo PHP_EOL;
 }

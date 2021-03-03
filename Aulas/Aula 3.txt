@@ -1,5 +1,9 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> Criamos um CRUD através do DoctrineORM
+    => findAllStudents.php com o método findAll();
+    => findOne.php com o método find(); Além de usarmos a variavel $argv[] para receber parametros da linha de comandos.
+    => findOneBy.php utilizando o método findBy(['campo' => 'valor']);
+    => updateStudent.php com o metodo setName() e flush() para gravar no banco.
+    => deleteStudent.php com o metodo remove() do entityManager.

@@ -10,12 +10,14 @@ $entityManager = $entityManagerFactory->getEntityNanager();
 
 $studentsRepository = $entityManager->getRepository(Student::class);
 
-/** @var Student[] $studentsList */
-$studentsList = $studentsRepository->findAll();
+/** @var Student $student */
+$student = $studentsRepository->find($argv[1]);
 
-foreach ($studentsList as $student) {
+if ($student) {
     echo "ID: {$student->getId()}".PHP_EOL;
     echo "Nome: {$student->getName()}".PHP_EOL;
     echo PHP_EOL;
+} else {
+    echo 'Aluno não encontrado!'.PHP_EOL;
     echo PHP_EOL;
 }
