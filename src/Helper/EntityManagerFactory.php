@@ -11,7 +11,7 @@ class EntityManagerFactory
     /** @return EntityManagerInterface */
     public function getEntityNanager(): EntityManagerInterface
     {
-        $rootDir = __DIR__.'/../..';
+        $rootDir = __DIR__.'/../../';
         $config = Setup::createAnnotationMetadataConfiguration(
             [$rootDir.'/src'],
             true
@@ -19,7 +19,7 @@ class EntityManagerFactory
 
         $connection = [
             'driver' => 'pdo_sqlite',
-            'path' => $rootDir.'/var/data/db.sqlite',
+            'path' => $rootDir.'/data/db.sqlite',
         ];
 
         return EntityManager::create($connection, $config);

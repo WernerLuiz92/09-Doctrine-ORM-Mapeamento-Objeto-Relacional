@@ -1,5 +1,9 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> Como implementar uma entidade
+    => A anotação @Entity
+    => Com funcionam as anotações @Id, @GeneratedValue e @Column
+-> A implementar o arquivo que faz a linha de comando do Doctrine funcionar
+-> Como cria o schema do banco de dados
+-> Como inserir uma entidade no banco
