@@ -1,5 +1,5 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> A criar uma classe de repositório e extrair o código DQL para ela
+-> Uma nova forma de criar queries, com o QueryBuilder
