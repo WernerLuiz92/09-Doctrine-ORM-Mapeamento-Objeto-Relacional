@@ -18,8 +18,11 @@ class EntityManagerFactory
         );
 
         $connection = [
-            'driver' => 'pdo_sqlite',
-            'path' => $rootDir.'/Data/db.sqlite',
+            'driver' => 'pdo_mysql',
+            'host' => '172.18.0.10',
+            'dbname' => 'curso_doctrine',
+            'user' => 'root',
+            'password' => 'mysql',
         ];
 
         return EntityManager::create($connection, $config);
