@@ -9,7 +9,7 @@ use Doctrine\ORM\Tools\Setup;
 class EntityManagerFactory
 {
     /** @return EntityManagerInterface */
-    public function getEntityNanager(): EntityManagerInterface
+    public function getEntityManager(): EntityManagerInterface
     {
         $rootDir = __DIR__.'/../../';
         $config = Setup::createAnnotationMetadataConfiguration(

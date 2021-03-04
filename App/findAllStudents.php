@@ -9,7 +9,7 @@ use Werner\DoctrineORM\Helper\MapArrayPhones;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory->getEntityNanager();
+$entityManager = $entityManagerFactory->getEntityManager();
 
 $debugStack = new DebugStack();
 $entityManager->getConfiguration()->setSQLLogger($debugStack);

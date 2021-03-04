@@ -7,7 +7,7 @@ use Werner\DoctrineORM\Helper\EntityManagerFactory;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory->getEntityNanager();
+$entityManager = $entityManagerFactory->getEntityManager();
 
 echo 'Qual o ID do aluno que deseja remover? ';
 $lerId = fopen('php://stdin', 'r');

@@ -8,7 +8,7 @@ use Werner\DoctrineORM\Helper\EntityManagerFactory;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory->getEntityNanager();
+$entityManager = $entityManagerFactory->getEntityManager();
 
 echo 'Qual o ID do curso que deseja criar a turma? ';
 $read = fopen('php://stdin', 'r');

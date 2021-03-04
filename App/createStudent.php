@@ -8,7 +8,7 @@ use Werner\DoctrineORM\Helper\EntityManagerFactory;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory->getEntityNanager();
+$entityManager = $entityManagerFactory->getEntityManager();
 
 $student = new Student();
 $student->setName($argv[1]);

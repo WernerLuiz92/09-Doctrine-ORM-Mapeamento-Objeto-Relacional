@@ -10,14 +10,15 @@ require_once __DIR__.'/../vendor/autoload.php';
 $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityManager();
 
+/** @var StudentRepository */
 $studentsRepository = $entityManager->getRepository(Student::class);
 
-/** @var Student $student */
-$student = $studentsRepository->find($argv[1]);
+/** @var Student[] $studentsList */
+$studentsList = $studentsRepository->listCoursesByStudent();
 
-if ($student) {
-    echo "ID: {$student->getId()}".PHP_EOL;
-    echo "Nome: {$student->getName()}".PHP_EOL;
+foreach ($studentsList as $student) {
+    echo "ID: {$student->getId()}".'<br>';
+    echo "Nome: {$student->getName()}".'<br>';
     echo '- - - - Contatos - - - -'.'<br>';
     $phones = MapArrayPhones::getPhonesArray($student->getPhones());
 
@@ -25,7 +26,19 @@ if ($student) {
         echo '&ensp; -> '.$phone.'<br>';
     }
     echo '<br>';
-} else {
-    echo 'Aluno não encontrado!'.PHP_EOL;
-    echo PHP_EOL;
+    echo '- - - -- Cursos -- - - -'.'<br>';
+    $courses = $student->getCourses()->toArray();
+
+    foreach ($courses as $course) {
+        echo '&ensp; * '.$course->getname().'<br>';
+    }
+    echo '<br>';
+}
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+foreach ($debugStack->queries as $queryInfo) {
+    echo $queryInfo['sql'].'<br>';
 }
