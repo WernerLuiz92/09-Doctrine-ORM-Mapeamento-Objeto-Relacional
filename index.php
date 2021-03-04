@@ -4,7 +4,7 @@ $path = './App/';
 $diretorio = dir($path);
 
 while ($arquivo = $diretorio->read()) {
-    if (!($arquivo === '.' || $arquivo === '..')) {
+    if (!(substr($arquivo, 0, 1) === '.')) {
         echo "<a href='".$path.$arquivo."'>".$arquivo.'</a><br />';
     }
 }

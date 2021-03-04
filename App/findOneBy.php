@@ -1,3 +1,4 @@
+<a href="../index.php">Voltar<br></a>
 <?php
 
 use Werner\DoctrineORM\Entity\Student;
@@ -12,22 +13,22 @@ $studentsRepository = $entityManager->getRepository(Student::class);
 
 /** @var Student $student */
 $studentsList = $studentsRepository->findBy([
-    $argv[1] => $argv[2],
+    $_GET['field'] => $_GET['value'],
 ]);
 
 if (count($studentsList) === 0) {
-    echo 'Nenhum registro encontrado!'.PHP_EOL;
+    echo 'Nenhum registro encontrado!'.'<br>';
     exit();
 }
 
 foreach ($studentsList as $student) {
-    echo "ID: {$student->getId()}".PHP_EOL;
-    echo "Nome: {$student->getName()}".PHP_EOL;
-    echo '- - - - Contatos - - - -'.PHP_EOL;
+    echo "ID: {$student->getId()}".'<br>';
+    echo "Nome: {$student->getName()}".'<br>';
+    echo '- - - - Contatos - - - -'.'<br>';
     $phones = $student->getPhonesArray();
 
     foreach ($phones as $phone) {
-        echo $phone.PHP_EOL;
+        echo $phone.'<br>';
     }
-    echo PHP_EOL;
+    echo '<br>';
 }
