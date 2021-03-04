@@ -16,6 +16,12 @@ $student = $studentsRepository->find($argv[1]);
 if ($student) {
     echo "ID: {$student->getId()}".PHP_EOL;
     echo "Nome: {$student->getName()}".PHP_EOL;
+    echo '- - - - Contatos - - - -'.PHP_EOL;
+    $phones = $student->getPhonesArray();
+
+    foreach ($phones as $phone) {
+        echo $phone.PHP_EOL;
+    }
     echo PHP_EOL;
 } else {
     echo 'Aluno não encontrado!'.PHP_EOL;

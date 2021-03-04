@@ -1,5 +1,6 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> A implementar uma nova entidade, a entidade Telefone
+-> As relações entre Aluno e Telefone, e como implementá-las
+-> Como configurar, criar e executar as migrations do Doctrine

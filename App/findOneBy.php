@@ -23,5 +23,11 @@ if (count($studentsList) === 0) {
 foreach ($studentsList as $student) {
     echo "ID: {$student->getId()}".PHP_EOL;
     echo "Nome: {$student->getName()}".PHP_EOL;
+    echo '- - - - Contatos - - - -'.PHP_EOL;
+    $phones = $student->getPhonesArray();
+
+    foreach ($phones as $phone) {
+        echo $phone.PHP_EOL;
+    }
     echo PHP_EOL;
 }

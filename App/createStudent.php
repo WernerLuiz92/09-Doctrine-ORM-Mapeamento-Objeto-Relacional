@@ -19,8 +19,6 @@ for ($i = 2; $i < $argc; ++$i) {
     $number = substr($completePhoneNumber, 2);
     $phone = new Phone(null, $areaCode, $number);
 
-    $entityManager->persist($phone);
-
     $student->addPhone($phone);
 }
 
