@@ -23,7 +23,7 @@ class Student
     private string $name;
 
     /**
-     * @OneToMany(targetEntity="Phone", mappedBy="student", cascade={"remove", "persist"})
+     * @OneToMany(targetEntity="Phone", mappedBy="student", cascade={"remove", "persist"}, fetch="EAGER")
      */
     private Collection $phones;
 
@@ -66,18 +66,6 @@ class Student
     public function getPhones(): Collection
     {
         return $this->phones;
-    }
-
-    public function getPhonesArray(): array
-    {
-        $phonesArray = $this
-        ->getPhones()
-        ->map(function (Phone $phone) {
-            return $phone->getFormattedPhone();
-        })
-        ->toArray();
-
-        return $phonesArray;
     }
 
     public function addCourse(Course $course): self

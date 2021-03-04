@@ -14,13 +14,9 @@ $entityManager = $entityManagerFactory->getEntityNanager();
 $debugStack = new DebugStack();
 $entityManager->getConfiguration()->setSQLLogger($debugStack);
 
-$search = $_GET['q'];
+$studentClass = Student::class;
 
-if (isset($_GET['q'])) {
-    $where = " WHERE aluno.name LIKE '%$search%'";
-}
-
-$dql = "SELECT aluno FROM Werner\\DoctrineORM\\Entity\\Student aluno{$where}";
+$dql = "SELECT s, p, c FROM $studentClass s JOIN s.phones p JOIN s.courses c";
 
 $query = $entityManager->createQuery($dql);
 

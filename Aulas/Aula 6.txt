@@ -1,5 +1,8 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> Como realizar a busca dos cursos por alunos e mostrar as queries executadas no banco
+-> O que é DQL
+-> O formato de busca EAGER
+-> Como utilizar DQL para otimizar as consultas ao banco de dados
+-> Como exibir o total de alunos do banco de dados
