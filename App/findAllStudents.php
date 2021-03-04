@@ -23,4 +23,11 @@ foreach ($studentsList as $student) {
         echo $phone.PHP_EOL;
     }
     echo PHP_EOL;
+    echo '- - - -- Cursos -- - - -'.PHP_EOL;
+    $courses = $student->getCourses()->toArray();
+
+    foreach ($courses as $course) {
+        echo $course->getname().PHP_EOL;
+    }
+    echo PHP_EOL;
 }

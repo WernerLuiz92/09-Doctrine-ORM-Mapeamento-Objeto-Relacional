@@ -1,5 +1,5 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> O funcionamento da relação many-to-many e como implementá-la
+-> Como vincular um curso a um aluno e vice-versa
