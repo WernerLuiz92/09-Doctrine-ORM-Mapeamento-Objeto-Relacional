@@ -34,11 +34,3 @@ foreach ($studentsList as $student) {
     }
     echo '<br>';
 }
-
-echo '<br>';
-echo '<br>';
-echo '<br>';
-echo '<br>';
-foreach ($debugStack->queries as $queryInfo) {
-    echo $queryInfo['sql'].'<br>';
-}

@@ -1,5 +1,5 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> Que podemos utilizar o Doctrine no nosso framework favorito
+-> Como utilizar outro SGBD na nossa aplicação
